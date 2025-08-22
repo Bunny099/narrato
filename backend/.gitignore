@@ -1,0 +1,46 @@
+
+# Node.js dependencies
+node_modules/
+.pnpm-debug.log*
+.pnpm-store/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor & system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+*.tmp
+*.temp
+
+# Coverage and test output
+coverage/
+.nyc_output/
+jest-test-results.json
+test-report.xml
+
+# Optional: if you generate pid/lock files
+*.pid
+*.seed
+*.pid.lock
