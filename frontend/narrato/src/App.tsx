@@ -2,17 +2,24 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Home } from './pages/Home'
+import { Auth } from './pages/Auth'
+import { Dashboard } from './pages/Dashboard'
 function App() {
 
 
   return (
-    <><div className='p-2'>
-      <h1 className='text-3xl font-extralight'>Narrato</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/auth' element={<Auth />} />
+        <Route path="/auth/dashboard" element={<Dashboard />} />
+      </Routes>
 
-    </>
+    </BrowserRouter>
   )
+
 }
 
 export default App
