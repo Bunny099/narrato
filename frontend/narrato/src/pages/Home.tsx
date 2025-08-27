@@ -1,31 +1,28 @@
+import { Button } from "../components/button";
+import { Footer } from "../components/footer";
+import { Navbar } from "../components/nav";
 
-export  function Home(){
-    return <div className="min-h-screen w-full"> 
-        <nav className="flex justify-between px-34 p-2 border-b border-gray-600 py-4">
-            <h1 className="font-bold text-3xl font-sans">Narrato</h1>
+export function Home(){
+  return <div className="min-h-screen w-full bg-amber-50">
 
-            <div className="flex items-center gap-4">
-                <h1 className="text-md">Sign in</h1>
-                 <button className="bg-black text-white px-4 py-1 rounded-3xl hover:cursor-pointer">Get Started</button>
-            </div>
-           
-        </nav>
-        <section className="flex justify-between " >
-            <div className="flex flex-col justify-center pl-34">
-                <h1 className="text-8xl font-sans font-semibold line-clamp-2">Human</h1>
-            <h1 className="text-8xl font-sans font-semibold">Stories & Ideas</h1>
-            <div className="mt-4">
-                <button className="bg-black text-white px-4 py-1 rounded-3xl hover:cursor-pointer">Start Reading</button>
-            </div>
-            
-            </div>
-            <div>
-                <img src="/image1.webp" className="h-[560px] w-[400px]" alt="" />
-            </div>
-            
-        </section>
-        <div className="border-t border-gray-600 flex items-center justify-center">
-            <h1 className="text-2xl">Narrato</h1>
+      <Navbar/>
+
+      <section className="min-h-screen flex justify-between ">
+        <div className="flex flex-col p-10 md:p-24 ">
+            <p className="text-8xl md:text-9xl text-gray-900 font-semibold">Human</p>
+        <p className="text-7xl md:text-8xl text-gray-900 font-semibold">Stories & ideas</p>
+        <p className="text-2xl text-gray-900 py-8 md:py-10">A place to read, write, and deepen your understanding</p>
+        <div>
+          <Button text="Start Reading"/>
         </div>
-    </div>
+        
+        </div>
+        <div className="h-auto hidden md:block">
+          <img src="image1.webp" className="h-[660px] object-contain " alt="" />
+        </div>
+      
+      </section>
+
+      <Footer/>
+  </div>
 }
