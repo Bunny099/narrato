@@ -5,7 +5,7 @@ import type { Request, Response } from 'express';
 import dotenv from "dotenv"
 import cors from "cors";
 import { v4 as uuid } from "uuid";
-import { blogModel } from './db.js';
+import { blogsModel } from './db.js';
 
 dotenv.config()
 const app = express();
@@ -24,14 +24,24 @@ app.use(cors())
 app.get("/", (req: Request, res: Response) => {
     res.send("backend is running")
 })
+
+app.get("/blog",async(req:Request,res:Response)=>{
+    try{
+        const blogs = await blogsModel.find();
+        res.status(202).json({message:"fetch blog successfullt",blogs}) 
+    }catch(err){
+        console.error(err);
+        res.status(404).json({message:"Server error"})
+    }
+})
 app.post("/blog", async (req: Request, res: Response) => {
 
     try {
-        const { title, content } = req.body;
-        if (!title || !content) {
+        const { title, blog } = req.body;
+        if (!title || !blog) {
             res.status(403).json({ message: "blog must be provided!" })
         }
-        await blogModel.create({ title, content })
+        await blogsModel.create({ title, blog })
         res.status(202).json({ message: "blog created successfuly!" })
     } catch (error) {
         console.error(error);

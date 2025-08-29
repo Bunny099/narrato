@@ -4,9 +4,9 @@ import {Schema} from 'mongoose'
 let ObjectId = mongoose.Schema.Types.ObjectId;
 
 
-const blogSchema = new Schema({
-    title: String,
-    content:String
-})
 
-export const blogModel = mongoose.model("Blog",blogSchema)
+const blogsSchema = new Schema({
+    title:String,
+    blog:String
+})
+export const blogsModel = mongoose.model("Blog",blogsSchema)

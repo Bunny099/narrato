@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Home } from './pages/Home'
-import { Auth } from './pages/Auth'
+import { AuthModal } from './pages/Auth'
 import { Dashboard } from './pages/Dashboard'
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/auth' element={<Auth />} />
+        <Route path='/auth' element={<AuthModal />} />
         <Route path="/auth/dashboard" element={<Dashboard />} />
       </Routes>
 
